@@ -40,7 +40,8 @@ class ProductIndex(indexes.SearchIndex, indexes.Indexable):
         return self.get_model().browsable.order_by('-date_updated')
 
     def read_queryset(self, using=None):
-        return self.get_model().browsable.base_queryset()
+        #return self.get_model().browsable.base_queryset()
+        return self.get_model().objects.all()
 
     def prepare_product_class(self, obj):
         return obj.get_product_class().name
