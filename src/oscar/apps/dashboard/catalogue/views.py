@@ -120,7 +120,7 @@ class ProductListView(SingleTableView):
         """
         Build the queryset for this list
         """
-        queryset = Product.browsable.base_queryset()
+        queryset = Product.objects.all()
         queryset = self.filter_queryset(queryset)
         queryset = self.apply_search(queryset)
         return queryset
